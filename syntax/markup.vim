@@ -14,7 +14,7 @@ syn match muBold "\*\*.*\*\*"
 syn keyword muTodo contained TODO FIXME XXX NOTE
 syn keyword muInc contained Inc
 syn match muComment "!.*$" contains=muTodo,muInc
-syn match muPropCond "^!\=\is*\w\+\s*|" contained
+syn match muPropCond "^!\=\s*\w\+\s*|" contained
 syn match muPropVar "\s*\w\+\s*" contained
 syn match muPropValue ":\s*.*$" contained
 syn region muProps start="---$" end="---$" fold transparent contains=muPropCond,muPropVar,muPropValue
