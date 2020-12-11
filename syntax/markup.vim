@@ -16,6 +16,7 @@ syn keyword muTagName contained PRS PRP CPT LNK PRT CENTER LEFT INDENT JUST UNJU
 syn match muTagSymbol contained ":[a-zA-z0-9 \-]*" 
 syn keyword muInc contained Inc
 syn match muComment "!.*$" contains=muTodo,muInc
+syn match muHeading "##\=#\=.*$"
 syn region muCode start="^```$" end="^```$" fold transparent
 syn match muPropVar "\s*\w\+\s*" contained
 syn match muPropCond "^!\=\s*\w\+\s*|" contained
@@ -36,3 +37,4 @@ hi def link muPropCond  Conditional
 hi def link muPropVar   Delimiter
 hi def link muPropValue Constant
 hi def link muTag       Tag
+hi def link muHeading   Float
