@@ -12,8 +12,9 @@ syn match muEmph "\*.*\*"
 syn match muBold "__.*__"
 syn match muBold "\*\*.*\*\*"
 syn keyword muTodo contained TODO FIXME XXX NOTE
-syn keyword muTagName contained PRS PRP CPT LNK PRT CENTER LEFT INDENT JUST UNJUST NINDENT HANGING RIGHT PAG PAGW PAGH LIN LINE VBRK LINEBR COLBR IDX IF ENDIF COL 
-syn match muTagSymbol contained ":[a-zA-z0-9 \-]*" 
+syn keyword muTagName contained PRS PRP CPT LNK PRT CENTER LEFT INDENT JUST UNJUST NINDENT HANGING RIGHT PAG PAGW PAGH LIN LINE VBRK LINEBR COLBR IDX IF ENDIF COL
+syn match muTagProp contained "()[a-zA-Z]*()" 
+syn match muTagSymbol contained ":[a-zA-Z0-9 \-()/\.,;]*" contains=muTagProp 
 syn keyword muInc contained Inc
 syn match muComment "!.*$" contains=muTodo,muInc
 syn match muHeading "##\=#\=.*$"
@@ -31,6 +32,7 @@ hi def link muEmph      String
 hi def link muInc       SpecialComment
 hi def link muTagName   Conditional
 hi def link muTagSymbol Function
+hi def link muTagProp   Float
 hi def link muComment   Comment
 hi def link muProps     Comment
 hi def link muPropCond  Conditional
